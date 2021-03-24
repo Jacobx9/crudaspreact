@@ -133,25 +133,25 @@ useEffect(()=>{
         <br></br>
         <table className='table table-bordered'>
           <thead>
-            <td>Id</td>
+            <td hidden>Id</td>
             <td>Proveedor</td>
             <td>Monto</td>
             <td>Moneda</td>
             <td>Fecha</td>
             <td>Comentario</td>
-            <td>id_Usuario</td>
+            <td hidden>id_Usuario</td>
             <td>Acciones</td>
           </thead>
           <tbody>
             {data.map(recibo=>(
               <tr key={recibo.id}>
-                <td>{recibo.id}</td>
+                <td hidden>{recibo.id}</td>
                 <td>{recibo.proveedor}</td>
                 <td>{recibo.monto}</td>
                 <td>{recibo.moneda}</td>
                 <td>{recibo.fecha}</td>
                 <td>{recibo.comentario}</td>
-                <td>{recibo.id_usuario}</td>
+                <td hidden>{recibo.id_usuario}</td>
                 <td>
                   <button className="btn btn-primary" onClick={()=>seleccionarRecibo(recibo,"Editar")}>Editar</button>{" "}
                   <button className="btn btn-danger" onClick={()=>seleccionarRecibo(recibo,"Eliminar")}>Eliminar</button>
@@ -190,9 +190,9 @@ useEffect(()=>{
               <br/>
               <input type="text" className="form-control" name="comentario" onChange={handleChange}></input>
               <br/>
-              <label>Id Usuario</label>
+              <label hidden>Id Usuario</label>
               <br/>
-              <input type="text" className="form-control" name="id_usuario" onChange={handleChange}></input>
+              <input type="text" hidden className="form-control" name="id_usuario" onChange={handleChange}></input>
               <br/>
             </div>
           </ModalBody>
@@ -234,9 +234,9 @@ useEffect(()=>{
               <br/>
               <input type="text" className="form-control" name="comentario" onChange={handleChange} value={reciboSeleccionado && reciboSeleccionado.comentario}></input>
               <br/>
-              <label>Id Usuario</label>
+              <label hidden>Id Usuario</label>
               <br/>
-              <input type="text" className="form-control" name="id_usuario" onChange={handleChange} value={reciboSeleccionado && reciboSeleccionado.id_usuario}></input>
+              <input type="text" hidden className="form-control" name="id_usuario" onChange={handleChange} value={reciboSeleccionado && reciboSeleccionado.id_usuario}></input>
               <br/>
             </div>
           </ModalBody>
